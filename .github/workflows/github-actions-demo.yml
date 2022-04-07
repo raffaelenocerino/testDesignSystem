@@ -8,7 +8,7 @@ jobs:
   save_in_repo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{toJson(github.event.client_payload)}}" > designTokens.json
+      - run: echo "${{toJson(github.event.client_payload.tokens)}}" > designTokens.json
       - run: cat designTokens.json
       - run: git add designTokens.json
       - run: git commit -m "New design token"
