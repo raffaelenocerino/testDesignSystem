@@ -11,7 +11,7 @@ jobs:
       - env:
           PAYLOAD: ${{ github.event.client_payload }}
         run:
-            echo $PAYLOAD > designTokens.json
+            echo "${{env.PAYLOAD}}" > designTokens.json
             git add designTokens.json
             git commit -m "New design token"
             git push
