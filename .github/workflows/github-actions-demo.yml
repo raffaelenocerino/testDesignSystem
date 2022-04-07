@@ -4,14 +4,13 @@ on:
         push:
             branches:
                 - main
-env:
-    payload: ${{ github.event.client_payload }}
-
 jobs:
   save_in_repo:
     runs-on: ubuntu-latest
     steps:
-      - run:
+      - env:
+            payload:    ${{ github.event.client_payload }}
+        run:
             echo "${{env.payload}}" > designTokens.json
             git add designTokens.json
             git commit -m "New design token"
