@@ -1,6 +1,0 @@
-on:
-    repository_dispatch:
-        types: [update-tokens]
-        push:
-            branches:
-                - main
