@@ -8,11 +8,15 @@ jobs:
   save_in_repo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{github.event.client_payload.tokens}}" > designTokens.json
-      - run: cat designTokens.json
-      - run: git config --global user.name "github-actions[bot]"
-      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - run: git status
-      - run: git add designTokens.json
-      - run: git commit -m "New design token"
-      - run: git push
+        - name: Git checkout
+          uses: actions/checkout@v2
+        - name: Git
+          run: |
+              echo "$github.event.client_payload.tokens" > designTokens.json
+              cat designTokens.json
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git status
+              git add designTokens.json
+              git commit -m "New design token"
+              git push
