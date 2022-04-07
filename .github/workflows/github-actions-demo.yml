@@ -12,7 +12,7 @@ jobs:
           uses: actions/checkout@v2
         - name: Git
           run: |
-              echo "$github.event.client_payload.tokens" > designTokens.json
+              echo "${{github.event.client_payload.tokens}}" > designTokens.json
               cat designTokens.json
               git config --global user.name "github-actions[bot]"
               git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
