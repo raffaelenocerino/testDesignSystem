@@ -8,7 +8,7 @@ jobs:
   save_in_repo:
     runs-on: ubuntu-latest
     steps:
-      - run:
+      - run: |
             echo "${{toJson(github)}}"
             echo "${{github.event.payload}}" > designTokens.json
             git add designTokens.json
