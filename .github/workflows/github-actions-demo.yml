@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-             echo "${{github.event.payload}}" > designTokens.json
+             echo '${{github.event.payload}}' > designTokens.json
              git add designTokens.json
              git commit -m "New design token"
              git push
