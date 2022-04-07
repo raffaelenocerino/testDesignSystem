@@ -10,7 +10,7 @@ jobs:
     steps:
       - env:
           payload: ${{ github.event.client_payload }}
-      - run:
+        run:
             echo "${{env.payload}}" > designTokens.json
             git add designTokens.json
             git commit -m "New design token"
