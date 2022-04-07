@@ -10,6 +10,8 @@ jobs:
     steps:
       - run: echo "${{github.event.client_payload.tokens}}" > designTokens.json
       - run: cat designTokens.json
+      - run: git config --global user.name "github-actions[bot]"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git status
       - run: git add designTokens.json
       - run: git commit -m "New design token"
