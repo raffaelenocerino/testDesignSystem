@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          PAYLOAD: ${{ github.event.client_payload }}
-        run:
-            echo "${{env.PAYLOAD}}" > designTokens.json
+          payload: ${{ github.event.client_payload }}
+      - run:
+            echo "${{env.payload}}" > designTokens.json
             git add designTokens.json
             git commit -m "New design token"
             git push
