@@ -1,1 +1,1 @@
-.event.client_payload.tokens
+{spacing:{10:{description:null,type:custom-spacing,value:{top:10,bottom:10,left:10,right:10},extensions:{org.lukasoppermann.figmaDesignTokens:{exportKey:spacing}}}}}
